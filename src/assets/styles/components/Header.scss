@@ -1,0 +1,39 @@
+@import "../variables";
+@import "../mixins";
+
+body {
+  font-family: $roboto;
+  min-height: 100vh;
+}
+
+.header {
+  height: 80px;
+  border-bottom: 1px solid $color-white;
+  font-size: 36px;
+  color: $color-white;
+  @include flex(row, unset, center);
+}
+
+.header-span-opacity {
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-left: 18px;
+}
+
+.all_data {
+  margin-left: 70px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 18px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.averages {
+  margin-left: 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 18px;
+  opacity: 0.5;
+  cursor: pointer;
+}
