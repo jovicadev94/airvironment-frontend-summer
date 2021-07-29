@@ -12,28 +12,35 @@ body {
   font-size: 36px;
   color: $color-white;
   @include flex(row, unset, center);
-}
 
-.header-span-opacity {
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin-left: 18px;
-}
+  .home-navigation {
+    margin-left: 32px;
+    margin-top: 16px;
 
-.all_data {
-  margin-left: 70px;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-top: 18px;
-  opacity: 0.5;
-  cursor: pointer;
-}
+    .header-span-opacity {
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+  }
+  .navigation {
+    margin-top: 15px;
 
-.averages {
-  margin-left: 30px;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-top: 18px;
-  opacity: 0.5;
-  cursor: pointer;
+    .all_data {
+      margin-left: 70px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .averages {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-left: 32px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
 }
