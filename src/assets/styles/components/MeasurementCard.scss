@@ -7,14 +7,13 @@
   color: $color-white;
   width: 180px;
   height: 200px;
-  margin-left: 200px;
   @include flex(column, unset, center, unset);
   background: $border-opacity-white;
 
   .measurementCardTitle {
     width: 68px;
     height: 51px;
-    @include flex(column, center, center, unset);
+    @include flex(column, center, center, unwrap);
 
     .measurement-title {
       font-size: 28px;
@@ -71,7 +70,7 @@
     flex-shrink: 0;
 
     .temperature {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
     }
     span {
