@@ -7,32 +7,30 @@ import {
 } from "../assets/icons";
 import LowValueIcon from "../assets/icons/LowValueIcon";
 
-function MeasurementCard() {
+function MeasurementCard({ data, fetchedData }) {
   return (
     <div className="measurementCard">
       <div className="measurementCardTitle">
-        <span className="measurement-title">Wed</span>
-        <span className="measurement-subtitle">26.Jul.2021.</span>
+        <span className="measurement-title">{data.title}</span>
+        <span className="measurement-subtitle">{data.subtitle}</span>
       </div>
       <hr />
       <div className="measurement-details">
-        {/*<span className="leftSpan">21</span>*/}
-        {/*<span className="rightSpan">22</span>*/}
         <div className="measurement-details-left">
           <TempSmallIcon />
           <div className="measurement-details-left-subright">
             <div className="measurement-details-left-subright-up">
               <HighValueIcon />
-              <span>30C°</span>
+              <span>{data.tempMax}C°</span>
             </div>
             <div className="measurement-details-left-subright-down">
               <LowValueIcon />
-              <span>22C°</span>
+              <span>{data.tempMin}C°</span>
             </div>
           </div>
         </div>
         <div className="measurement-details-right">
-          <span className="temperature">/ 26C°</span>
+          <span className="temperature">/ {fetchedData.temperature}C°</span>
         </div>
       </div>
       <div className="measurement-details">
@@ -43,16 +41,16 @@ function MeasurementCard() {
           <div className="measurement-details-left-subright">
             <div className="measurement-details-left-subright-up">
               <HighValueIcon />
-              <span>56%</span>
+              <span>{data.humMax}%</span>
             </div>
             <div className="measurement-details-left-subright-down">
               <LowValueIcon />
-              <span>40%</span>
+              <span>{data.humMin}%</span>
             </div>
           </div>
         </div>
         <div className="measurement-details-right">
-          <span className="temperature">/ 48%</span>
+          <span className="temperature">/ {fetchedData.humidity}%</span>
         </div>
       </div>
       <div className="measurement-details">
@@ -63,17 +61,17 @@ function MeasurementCard() {
           <div className="measurement-details-left-subright">
             <div className="measurement-details-left-subright-up">
               <HighValueIcon />
-              <span>0.30ppb</span>
+              <span>{data.polMax}ppb</span>
             </div>
             <div className="measurement-details-left-subright-down">
               <LowValueIcon />
-              <span>0.30ppb</span>
+              <span>{data.polMin}ppb</span>
             </div>
           </div>
         </div>
         <div className="measurement-details-right">
           <span>
-            <span className="temperature">/ 0,60</span>ppb
+            <span className="temperature">/ {fetchedData.pollution}</span>ppb
           </span>
         </div>
       </div>
