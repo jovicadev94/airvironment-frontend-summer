@@ -7,11 +7,13 @@
   color: $color-white;
   width: 180px;
   height: 200px;
+  margin-right: 24px;
+  margin-bottom: 24px;
   @include flex(column, unset, center, unset);
   background: $border-opacity-white;
 
   .measurementCardTitle {
-    width: 68px;
+    width: 80px;
     height: 51px;
     @include flex(column, center, center, unwrap);
 
@@ -23,6 +25,7 @@
 
     .measurement-subtitle {
       font-size: 12px;
+      width: 100%;
     }
   }
 
