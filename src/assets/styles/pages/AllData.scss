@@ -1,0 +1,9 @@
+@import "../mixins";
+@import "../variables";
+
+.all-data-container {
+  padding-top: 48px;
+  width: fit-content;
+  color: $color-white;
+  @include flex(row, center, unset, wrap);
+}
