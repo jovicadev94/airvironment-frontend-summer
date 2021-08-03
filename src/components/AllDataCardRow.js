@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const AllDataCardRow = () => {
+const AllDataCardRow = ({ response }) => {
   return (
     <>
       <div className="date-time-wrapper">sat</div>
-      <div className="values">{Math.round("temperatura")}&deg;C</div>
-      <div className="values">{Math.round("vlaznost")}%</div>
-      <div className="values">{Math.round("zagadjenost") / 100}ppb</div>
+      <div className="values">{Math.round(response.temperature)}&deg;C</div>
+      <div className="values">{Math.round(response.humidity)}%</div>
+      <div className="values">{Math.round(response.pollution) / 100}ppb</div>
     </>
   );
 };

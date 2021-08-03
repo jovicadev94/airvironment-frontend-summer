@@ -10,9 +10,7 @@ function Averages({ averageValues, getAverageValues }) {
       all: true,
     };
     getAverageValues(params);
-    console.log(averageValues);
-  }, [averageValues]);
-
+  }, [getAverageValues]);
   return averageValues ? (
     <div className="averages-container">
       {averageValues.map((averageValue) => (

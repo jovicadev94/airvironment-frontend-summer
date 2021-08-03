@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import "../assets/styles/pages/all-data/AllData.scss";
+import "../assets/styles/pages/AllData.scss";
 import useDates from "../hooks/useDates";
 import AllDataCard from "../components/AllDataCard";
 import { loadMeasurements } from "../redux/actions/measurementsActions";
@@ -39,9 +39,14 @@ const AllData = ({ getMeasurements, measurements }) => {
 
   return (
     <div className="all-data-container">
-      {/*
-        <AllDataCard />
-*/}
+      {dataArray?.length &&
+        dataArray.map((response) => {
+          return dataArray ? (
+            <AllDataCard fetchData={response} />
+          ) : (
+            <div> </div>
+          );
+        })}
     </div>
   );
 };

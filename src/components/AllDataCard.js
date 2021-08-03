@@ -1,29 +1,46 @@
 import React from "react";
 import "../assets/styles/components/AllDataCard.scss";
-import { TemperatureIcon, HumidityIcon, PollutionIcon } from "../assets/icons";
+import {
+  TempSmallIcon,
+  HumiditySmallIcon,
+  PollutionSmallIcon,
+} from "../assets/icons";
 import AllDataCardRow from "./AllDataCardRow";
+import moment from "moment";
 
-const AverageCard = () => {
+const AverageCard = ({ fetchData }) => {
   return (
     <div className="all-data-row">
       <div className="header-row">
         <div className="date-time-wrapper">
-          <div className="day">dan</div>
-          <div className="date">datum</div>
+          <div className="day">
+            {moment(fetchData[0].created.substr(0, 10)).format("ddd")}
+          </div>
+          <div className="date">
+            {moment(fetchData[0].created.substr(0, 10)).format("DD.MMM.YYYY")}
+          </div>
         </div>
         <div className="data-icon-wrapper">
-          <TemperatureIcon className="data-icon" />
+          <TempSmallIcon className="data-icon" />
         </div>
         <div className="data-icon-wrapper">
-          <HumidityIcon className="data-icon" />
+          <HumiditySmallIcon className="data-icon" />
         </div>
         <div className="data-icon-wrapper">
-          <PollutionIcon className="data-icon" />
+          <PollutionSmallIcon className="data-icon" />
         </div>
       </div>
-      <div className="hour-data">{/*<AllDataCardRow />*/}</div>
+      {fetchData?.length &&
+        fetchData.map((r) => {
+          return fetchData ? (
+            <div className="hour-data">
+              {<AllDataCardRow response={r} key={r} />}
+            </div>
+          ) : (
+            <div> </div>
+          );
+        })}
     </div>
   );
 };
-
 export default AverageCard;

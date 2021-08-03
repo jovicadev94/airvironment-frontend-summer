@@ -39,6 +39,6 @@
   }
   .hour-data {
     @include flex(row, space-between, center);
-    border-bottom: 1px solid $stripe-opacity;
+    border-bottom: 1px solid $border-opacity-white;
   }
 }
