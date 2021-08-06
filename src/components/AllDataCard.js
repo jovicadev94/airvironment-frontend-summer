@@ -1,46 +1,41 @@
 import React from "react";
 import "../assets/styles/components/AllDataCard.scss";
-import {
-  TempSmallIcon,
-  HumiditySmallIcon,
-  PollutionSmallIcon,
-} from "../assets/icons";
+import { TemperatureIcon, HumidityIcon, PollutionIcon } from "../assets/icons";
+import useDates from "../hooks/useDates";
 import AllDataCardRow from "./AllDataCardRow";
-import moment from "moment";
 
-const AverageCard = ({ fetchData }) => {
+const AverageCard = ({ dayData }) => {
+  const { returnDate, returnDay } = useDates();
+  const day = returnDay(dayData[0].created);
+  const date = returnDate(dayData[0].created);
+
   return (
     <div className="all-data-row">
       <div className="header-row">
         <div className="date-time-wrapper">
-          <div className="day">
-            {moment(fetchData[0].created.substr(0, 10)).format("ddd")}
-          </div>
-          <div className="date">
-            {moment(fetchData[0].created.substr(0, 10)).format("DD.MMM.YYYY")}
-          </div>
+          <div className="day">{day}</div>
+          <div className="date">{date}</div>
         </div>
         <div className="data-icon-wrapper">
-          <TempSmallIcon className="data-icon" />
+          <TemperatureIcon className="data-icon" />
         </div>
         <div className="data-icon-wrapper">
-          <HumiditySmallIcon className="data-icon" />
+          <HumidityIcon className="data-icon" />
         </div>
         <div className="data-icon-wrapper">
-          <PollutionSmallIcon className="data-icon" />
+          <PollutionIcon className="data-icon" />
         </div>
       </div>
-      {fetchData?.length &&
-        fetchData.map((r) => {
-          return fetchData ? (
-            <div className="hour-data">
-              {<AllDataCardRow response={r} key={r} />}
-            </div>
-          ) : (
-            <div> </div>
-          );
-        })}
+      {dayData.map((hour, index) => (
+        <div
+          className={`hour-data ${index % 2 === 1 ? "opacity" : ""}`}
+          key={hour.id}
+        >
+          <AllDataCardRow hour={hour} />
+        </div>
+      ))}
     </div>
   );
 };
+
 export default AverageCard;

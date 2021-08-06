@@ -1,12 +1,13 @@
 import React from "react";
 
-function humiditySmallIcon() {
+function HumiditySmallIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
+      className={className}
     >
       <g
         id="hum_small_ico"
@@ -33,4 +34,4 @@ function humiditySmallIcon() {
   );
 }
 
-export default humiditySmallIcon;
+export default HumiditySmallIcon;

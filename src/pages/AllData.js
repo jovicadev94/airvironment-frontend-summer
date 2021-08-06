@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { connect } from "react-redux";
 import "../assets/styles/pages/AllData.scss";
 import useDates from "../hooks/useDates";
@@ -17,7 +17,7 @@ const AllData = ({ getMeasurements, measurements }) => {
     getMeasurements(params);
   }, [getMeasurements]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function groupArray(array) {
       const groupedArray = [];
       let currentGroup = [];
@@ -39,14 +39,9 @@ const AllData = ({ getMeasurements, measurements }) => {
 
   return (
     <div className="all-data-container">
-      {dataArray?.length &&
-        dataArray.map((response) => {
-          return dataArray ? (
-            <AllDataCard fetchData={response} />
-          ) : (
-            <div> </div>
-          );
-        })}
+      {dataArray.map((dayData, index) => (
+        <AllDataCard dayData={dayData} key={index} />
+      ))}
     </div>
   );
 };

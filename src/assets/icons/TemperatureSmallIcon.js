@@ -1,12 +1,13 @@
 import React from "react";
 
-function TempSmallIcon() {
+function TemperatureSmallIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
+      className={className}
     >
       <g
         id="temp_small_ico"
@@ -33,4 +34,4 @@ function TempSmallIcon() {
   );
 }
 
-export default TempSmallIcon;
+export default TemperatureSmallIcon;

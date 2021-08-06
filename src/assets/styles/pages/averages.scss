@@ -1,7 +1,5 @@
-@import "../variables";
-@import "../mixins";
-
 .averages-container {
-  @include flex(row, unset, unset, wrap);
-  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

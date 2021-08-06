@@ -10,7 +10,7 @@
     margin-bottom: 8px;
   }
   .date-time-wrapper {
-    width: 70px;
+    width: 74px;
     text-align: center;
     height: 48px;
     @include flex(column, center, center);
@@ -21,7 +21,7 @@
       font-weight: bold;
       opacity: 0.5;
       width: 100%;
-      @include flex(unset, center);
+      @include flex(unset, flex-end);
     }
     .date {
       font-size: 12px;
@@ -32,7 +32,7 @@
   .data-icon-wrapper {
     text-align: center;
     @include flex(unset, center, center);
-    width: 70px;
+    width: 74px;
   }
   .values {
     font-weight: bold;
