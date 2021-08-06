@@ -6,11 +6,9 @@ export default function measurementsReducer(
   action
 ) {
   switch (action.type) {
-    case types.MEASUREMENTS_SUCCESS:
+    case types.MEASUREMENTS_LOAD_SUCCESS:
       return action.response;
-    case types.MEASUREMENTS_REQUEST:
-      return state;
-    case types.MEASUREMENTS_FAILURE:
+    case types.MEASUREMENTS_LOAD_FAILURE:
       return state;
     default:
       return state;

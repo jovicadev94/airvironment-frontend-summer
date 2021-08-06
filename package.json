@@ -1,5 +1,5 @@
 {
-  "name": "airvironment-frontend-summer",
+  "name": "airvironment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/core": "^4.12.3",
     "react-redux": "^7.2.4",
     "redux-immutable-state-invariant": "^2.1.0"
   }

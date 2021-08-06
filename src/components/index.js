@@ -1,6 +1,5 @@
 import Header from "./Header";
-import MeasurementCard from "./MeasurementCard";
-import AllDataCard from "./AllDataCard";
-import AllDataCardRow from "./AllDataCardRow";
+import AverageCard from "./AverageCard";
+import Filters from "./Filters";
 
-export { Header, MeasurementCard, AllDataCard, AllDataCardRow };
+export { Header, AverageCard, Filters };
