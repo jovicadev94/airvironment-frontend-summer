@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Home, Averages } from "./pages";
-import { MeasurementCard } from "./components";
-import AllData from "./pages/AllData";
+import { Home, Averages, AllData } from "./pages/index";
 
 const Routes = () => (
-  <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/averages" component={Averages} />
-    <Route path="/all_data" component={AllData} />
-  </Switch>
+  <div className="container">
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/averages" component={Averages} />
+      <Route path="/all-data" component={AllData} />
+    </Switch>
+  </div>
 );
 
 export default Routes;

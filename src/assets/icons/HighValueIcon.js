@@ -1,12 +1,13 @@
 import React from "react";
 
-function HighValueIcon() {
+function HighValueIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="10"
       height="10"
       viewBox="0 0 10 10"
+      className={className}
     >
       <path
         id="high_value_ico"
